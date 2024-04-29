@@ -1,10 +1,10 @@
 package com.example.librarymanagementsystem.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "patron")
@@ -17,8 +17,12 @@ public class Patron {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull
     private String name;
 
+    @NotNull
+    @Email
     private String email;
 
     private String address;
