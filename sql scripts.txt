@@ -1,0 +1,26 @@
+create database "library";
+--------------------------------------------
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    publication_year INTEGER,
+    isbn VARCHAR(20) UNIQUE
+);
+--------------------------------------
+CREATE TABLE patron (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255),
+    address VARCHAR(255)
+);
+-------------------------------------
+CREATE TABLE borrowing_records (
+    id SERIAL PRIMARY KEY,
+    book_id BIGINT,
+    patron_id BIGINT,
+    borrow_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES book(id),
+    FOREIGN KEY (patron_id) REFERENCES patron(id)
+);
