@@ -71,9 +71,6 @@ Once the application is running, you can interact with its API endpoints using H
   - URL: PUT `/api/return/{bookId}/patron/{patronId}`
   - Description: Handles the return of a borrowed book by a patron.
 
-## Authentication
-
-If authentication is implemented, you need to provide appropriate credentials (e.g., API key, JWT token) in the request headers according to the authentication mechanism used.
 
 ## Error Handling
 
